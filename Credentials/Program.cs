@@ -1,3 +1,6 @@
+
+using project_Credentials.App;
+using MediatR;
 namespace Credentials
 {
     public class Program
@@ -12,6 +15,8 @@ namespace Credentials
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddMediatR(typeof(AppMediatREntrypoint).Assembly);
+          
 
             var app = builder.Build();
 
