@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using project_Credentials.App.Interfaces;
 using project_Credentials.Domain.Models;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿namespace project_Credentials.App.Features.Utils
+﻿namespace project_Credentials.App.Interfaces
 {
     public interface IHasher
     {

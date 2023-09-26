@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using project_Credentials.App.Interfaces;
 using project_Credentials.Repository.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace project_Credentials.App.Features.Queries
     public class LoginQueryHandler : IRequestHandler<LoginQuery,string>
     {
         private readonly IUserRepository _user;
-        
+        private readonly IJwtUtil _jwt;
+        private readonly IHasher _hasher;
+        private readonly INumberGenerator _numberGenerator;
 
         public LoginQueryHandler(IUserRepository user)
         {

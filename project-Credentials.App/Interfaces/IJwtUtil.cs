@@ -1,6 +1,6 @@
 ﻿using project_Credentials.Domain.Models;
 
-namespace project_Credentials.App.Features.Utils
+namespace project_Credentials.App.Interfaces
 {
     public interface IJwtUtil
     {

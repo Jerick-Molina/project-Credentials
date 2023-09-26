@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using project_Credentials.App.Interfaces;
 
 namespace project_Credentials.App.Features.Utils;
 
