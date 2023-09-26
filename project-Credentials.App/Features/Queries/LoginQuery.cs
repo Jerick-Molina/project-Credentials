@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using project_Credentials.Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,7 +13,13 @@ namespace project_Credentials.App.Features.Queries
     public record LoginQuery(string email) : IRequest<string>;
     public class LoginQueryHandler : IRequestHandler<LoginQuery,string>
     {
+        private readonly IUserRepository _user;
+        
 
+        public LoginQueryHandler(IUserRepository user)
+        {
+            _user = user;
+        }
         public async Task<string> Handle(LoginQuery query,CancellationToken cancellationToken)
         {
             Debug.WriteLine(query.email);

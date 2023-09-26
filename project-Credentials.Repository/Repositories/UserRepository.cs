@@ -24,4 +24,16 @@ public class UserRepository : IUserRepository
         var response = await _db.LoadData<User, dynamic>("dbo.spUser_GetByEmail", new { Email = email });
         return response.FirstOrDefault();
     }
+
+    public async Task<User?> GetUserById(string id)
+    {
+        var response = await _db.LoadData<User,dynamic>("dbo.spUser_GetByID",  new { @ID = id });
+        return response.FirstOrDefault();
+
+    }
+    public async Task<User?> GetUserByAuthentication(string email, string password)
+    {
+        var response = await _db.LoadData<User,dynamic>("dbo.spUser_GetByAuthentication",new {Email =email, Password = password});
+        return response.FirstOrDefault();
+    }
 }
